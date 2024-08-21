@@ -114,3 +114,12 @@ const book = airIndia.book;
 // ---- call method --------------------------------
 book.call(emirates, 23, 'Neha Sk');
 console.log(emirates);
+
+// ---- apply method --------------------------------
+// in apply method you just need to pass the object and the array name to the method
+// e.g. down below will be best example
+
+const flightData = [2424, 'Mehrun Sk'];
+
+book.apply(emirates, flightData);
+console.log(emirates);
