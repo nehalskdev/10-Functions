@@ -67,5 +67,18 @@
 
 // -- functions returning functions --------------------------------
 
+// const greet = function (greetings) {
+//     return function (name) {
+//         console.log(`${greetings} ${name}!`);
+//     }
+// };
 
 
+// greet('Hello')('oi');
+
+const greet = (greetings) =>  (name) =>
+{ console.log(`${greetings} ${name}!`) };
+
+const greeterHey = greet('Hey'); 
+greeterHey('Nehal');
+greeterHey('abbas');
