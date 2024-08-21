@@ -23,19 +23,22 @@
  
 // ------ // passing argument works ---
 
-const flight = 'LH123';
-const nehal = {
-    name: 'Nehal Shaikh',
-    passport: 78946123
-}
-const checkIn = function (flightNum, passenger) {
-    flightNum = 'LH786'
-    passenger.name = 'Mr. ' + passenger.name;
+// const flight = 'LH123';
+// const nehal = {
+//     name: 'Nehal Shaikh',
+//     passport: 78946123
+// }
+// const checkIn = function (flightNum, passenger) {
+//     flightNum = 'LH786'
+//     passenger.name = 'Mr. ' + passenger.name;
 
-    if (passenger.passport === 78946123) {
-        alert('chek in')
-    } else { alert('wrong passport') };
-}
-checkIn(flight, nehal);
+//     if (passenger.passport === 78946123) {
+//         alert('chek in')
+//     } else { alert('wrong passport') };
+// }
+// checkIn(flight, nehal);
+
+// ------------- higher order functions and first class functions --------------------
+
 
 
