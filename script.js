@@ -40,27 +40,32 @@
 
 // ------------- higher order functions and first class functions --------------------
 
-const oneWord = function (str) {
-    return str.replace(/ /g, ' ').toLowerCase();
-}
-const upperFirstWord = function (str) {
-    const [first, ...others] = str.split(' ');
-    return [first.toUpperCase(), ...others].join(' ');
-}
+// const oneWord = function (str) {
+//     return str.replace(/ /g, ' ').toLowerCase();
+// }
+// const upperFirstWord = function (str) {
+//     const [first, ...others] = str.split(' ');
+//     return [first.toUpperCase(), ...others].join(' ');
+// }
 
-// higher order fnction //
-const transformer = function (str, fn) { 
-    console.log(`original string : ${str}`);
-    console.log(`transformed string: ${fn(str)}`);
-    console.log(`Transformed by: ${fn.name}`)
-}
-transformer('Javascript is the best!', upperFirstWord);
-transformer('Javascript is the best!', oneWord);
-// JS uses call backs all the time
-const high5 = function () {
-    console.log('Give it up!');
-}
-document.body.addEventListener('click', high5);
+// // higher order fnction //
+// const transformer = function (str, fn) {
+//     console.log(`original string : ${str}`);
+//     console.log(`transformed string: ${fn(str)}`);
+//     console.log(`Transformed by: ${fn.name}`)
+// }
+// transformer('Javascript is the best!', upperFirstWord);
+// transformer('Javascript is the best!', oneWord);
 
-['Nehal', 'abbas', 'rifaq', 'bayo'].forEach(high5);
+// // JS uses call backs all the time
+// const high5 = function () {
+//     console.log('Give it up!');
+// }
+// document.body.addEventListener('click', high5);
+
+// ['Nehal', 'abbas', 'rifaq', 'bayo'].forEach(high5);
+
+// -- functions returning functions --------------------------------
+
+
 
