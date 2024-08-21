@@ -101,12 +101,16 @@ airIndia.book(239, 'Nehal Shaikh');
 airIndia.book(852, 'Abbas Shaikh');
 console.log(airIndia);
 
-const Emirates = {
-  name: 'Emirates',
+const emirates = {
+  airline: 'emirates',
   iatacode: 'EK',
   bookings: [],
 };
 
 const book = airIndia.book;
 
-book(23, 'Neha Sk');
+// book(23, 'Neha Sk');
+
+// ---- call method --------------------------------
+book.call(emirates, 23, 'Neha Sk');
+console.log(emirates);
