@@ -20,7 +20,7 @@
 // createBooking('LH123');
 // createBooking('H123', 2, 800);
 // createBooking('H123', undefined, 500); // if you dont want to specify the paramter argument and want it to take as per default parameters then just set it to 'undefined'
- 
+
 // ------ // passing argument works ---
 
 // const flight = 'LH123';
@@ -73,7 +73,6 @@
 //     }
 // };
 
-
 // greet('Hello')('oi');
 
 // -- same function using arrow functions --------------------------------//
@@ -86,3 +85,28 @@
 
 // -- the call and apply methods --------------------------------
 
+const airIndia = {
+  airline: 'airIndia',
+  iatacode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iatacode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iatacode}${flightNum}`, name });
+  },
+};
+
+airIndia.book(239, 'Nehal Shaikh');
+airIndia.book(852, 'Abbas Shaikh');
+console.log(airIndia);
+
+const Emirates = {
+  name: 'Emirates',
+  iatacode: 'EK',
+  bookings: [],
+};
+
+const book = airIndia.book;
+
+book(23, 'Neha Sk');
