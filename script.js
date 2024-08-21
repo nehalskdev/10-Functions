@@ -76,9 +76,13 @@
 
 // greet('Hello')('oi');
 
-const greet = (greetings) =>  (name) =>
-{ console.log(`${greetings} ${name}!`) };
+// -- same function using arrow functions --------------------------------//
+// const greet = (greetings) =>  (name) =>
+// { console.log(`${greetings} ${name}!`) };
 
-const greeterHey = greet('Hey'); 
-greeterHey('Nehal');
-greeterHey('abbas');
+// const greeterHey = greet('Hey');
+// greeterHey('Nehal');
+// greeterHey('abbas');
+
+// -- the call and apply methods --------------------------------
+
