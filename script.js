@@ -85,46 +85,70 @@
 
 // -- the call and apply methods --------------------------------
 
-// const airIndia = {
-//   airline: 'airIndia',
-//   iatacode: 'LH',
-//   bookings: [],
-//   book(flightNum, name) {
-//     console.log(
-//       `${name} booked a seat on ${this.airline} flight ${this.iatacode}${flightNum}`
-//     );
-//     this.bookings.push({ flight: `${this.iatacode}${flightNum}`, name });
-//   },
-// };
+const airIndia = {
+  airline: 'airIndia',
+  iatacode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iatacode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iatacode}${flightNum}`, name });
+  },
+};
 
-// airIndia.book(239, 'Nehal Shaikh');
-// airIndia.book(852, 'Abbas Shaikh');
-// console.log(airIndia);
+airIndia.book(239, 'Nehal Shaikh');
+airIndia.book(852, 'Abbas Shaikh');
+console.log(airIndia);
 
-// const emirates = {
-//   airline: 'emirates',
-//   iatacode: 'EK',
-//   bookings: [],
-// };
+const emirates = {
+  airline: 'emirates',
+  iatacode: 'EK',
+  bookings: [],
+};
 
-// const book = airIndia.book;
+const book = airIndia.book;
 
-// // Does not work
-// // book(23, 'Neha Sk');
+// Does not work
+// book(23, 'Neha Sk');
 
-// // ---- call method --------------------------------
-// book.call(emirates, 23, 'Neha Sk');
-// console.log(emirates);
+// ---- call method --------------------------------
+book.call(emirates, 23, 'Neha Sk');
+console.log(emirates);
 
 // // ---- apply method --------------------------------
 // // in apply method you just need to pass the object and the array name to the method
 // // e.g. down below will be best example
 
-// const flightData = [2424, 'Mehrun Sk'];
+const flightData = [2424, 'Mehrun Sk'];
 
-// book.apply(emirates, flightData);
-// console.log(emirates);
+book.apply(emirates, flightData);
+console.log(emirates);
 
 // --- Bind Method ----
 
+const bookingER = book.bind(emirates);
+bookingER(26, 'Faran bhai');
+console.log(emirates);
 
+const bookER23 = book.bind(emirates, 23);
+bookER23('Qamaruddin S');
+bookER23('Mehrun SK');
+
+// with event listener
+
+emirates.planes = 300;
+emirates.buyPlane = function () {
+  console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
+// emirates.buyPlane();
+document
+  .querySelector('.buy')
+    .addEventListener('click', emirates.buyPlane.bind(emirates));
+  
+    // -- IIFE practice------
+(function () { console.log('teri maa ki chudi khanke') })();
+(() => console.log('teri maa ki chudi khanke FIRSE '))();
